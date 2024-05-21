@@ -1,0 +1,32 @@
+create table zen(stu_id int primary key,
+men_id varchar(25),
+fac_id varchar(30),
+f_name VARCHAR(25),
+l_name VARCHAR(30),
+zen_email VARCHAR(30));
+
+create table student(stu_id int,
+foreign key(stu_id)references zen(stu_id),
+men_id int,
+f_name varchar(30),
+l_name varchar(25),
+stu_email varchar(30));
+
+create table faculty(fac_id int,
+foreign key(fac_id)references zen(stu_id),
+fac_mail VARCHAR(30),
+fac_name VARCHAR(25));
+
+create table task(stu_id int ,
+foreign key(stu_id)references zen(stu_id),
+task_sub varchar(25),
+task_sco varchar(30),
+task_per varchar(25));
+
+create table attend(stu_id int,
+foreign key(stu_id)references zen(stu_id),
+stu_attend varchar(30),
+stu_name varchar(25));
+
+
+
